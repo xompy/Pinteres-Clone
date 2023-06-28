@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+        integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./SearchBar/searchBar.style.css">
+    <link rel="stylesheet" href="./Card/card.style.css">
+    <title>Pinteres Clone</title>
+</head>
+
+<body>
+    <div id="myModal" class="modal">
+
+    </div>
+    <!-- -------------------- Inicio del Nav Bar ---------------------->
+
+    <nav class="navbar navbar-expand-sm navbar-light ">
+        <div class="container-fluid">
+
+            <!-- -------------------- Logo ---------------------->
+
+            <a class="navbar-brand" href="#"><img class="img-searchbar" src="logo.png" alt="logo" width="24" height="24"
+                    style="position: relative; margin-left: 5px; margin-top: 8px"></a>
+
+            <!-- -------------------- Menu ---------------------->
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active" id="inicio">
+                            <a class="nav-link ebs" href="#">Inicio</a>
+                        </li>
+                        <li class="nav-item" id="hoy">
+                            <a class="nav-link ebs" href="#">Hoy</a>
+                        </li>
+                    </ul>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link ebs dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Crear
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item active" href="#">Crear un Idea Pin</a></li>
+                            <li><a class="dropdown-item" href="#">Crear Idea Pin</a></li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <!-- -------------------- Inicio del Search-Bar ---------------------->
+
+                <form class="d-flex ms-auto search-form d-block">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <span class="search-icon"><i class="fas fa-search"></i></span>
+                    <span class="close-icon"><i class="fas fa-times"></i></span>
+                    <div class="search-section">
+                        <div class="busquedas-recientes">
+
+                            <!-- Aquí va el contenido de "Busquedas recientes" -->
+
+                            <h6>Búsquedas recientes</h6>
+                            <div class="d-flex flex-wrap align-items-center justify-content-start">
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Viajes&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Ilustraciones&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Arte Manga&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Fondos de Pantalla&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Games&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                                <div class="tag-container">
+                                    <div class="tag">
+                                        <span>Coches&nbsp;</span>
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="ideas-para-ti">
+
+                            <!-- Aquí va el contenido de "Ideas para ti" -->
+
+                            <h6>Ideas para ti</h6>
+                            <div class="d-flex flex-wrap align-items-center justify-content-start">
+                                <div class="contenedor-imagen cont-viaje">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/e5/80/88/e5808830d67f395d4354a97741145515.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Viajes</h4>
+                                    </div>
+                                </div>
+
+                                <div class="contenedor-imagen cont-arte-manga">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/17/1a/cd/171acddc24cd2db330c4abdee135271b.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Arte Manga</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-fondo-pantalla">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/9e/21/21/9e2121f78c61ab08a416558cd8eedd76.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Fondos de Pantalla</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-coches">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/d8/35/d6/d835d631dcd07ff58817d4cf0bf6aa6b.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Coches</h4>
+                                    </div>
+                                </div>
+
+                                <!-- Agrega más elementos .idea si lo necesitas -->
+                            </div>
+                        </div>
+
+
+                        <div class="populares-en-pinterest">
+                            <!-- Aquí va el contenido de "Populares en Pinterest" -->
+
+                            <h6>Populares en Pinterest</h6>
+                            <div class="d-flex flex-wrap align-items-center justify-content-start">
+                                <div class="contenedor-imagen cont-fotos">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/b3/e4/84/b3e484d2a8b85494bce8b19c4e503693.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Fotos para Compartir</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-ilustraciones">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/564x/f8/bf/df/f8bfdfa9a07b952d9f01d0e4651b3ef6.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Ilustraciones</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-dibujos">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/17/8c/d0/178cd0b47c2774f56471209135d36112.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Dibujos Sencillos</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-celular">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/04/a9/ef/04a9ef27887b8c468a1ba4e45bdea488.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Fondos de Pantalla de Celular</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-aesthetic">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/96/74/83/967483ef9d4804bea4e8551797c27a5d.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Wallpaper Aesthetic</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-fotos-perfil">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/9f/7e/68/9f7e68d6be6fe3e9233bb06c52c31ecb.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Fotos de Perfil</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-espa-art">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/8b/df/94/8bdf94cddc471f7196ca11f1b8dc45a7.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Espacios Artisticos</h4>
+                                    </div>
+                                </div>
+                                <div class="contenedor-imagen cont-games">
+                                    <img class="img-searchbar"
+                                        src="https://i.pinimg.com/236x/b0/61/95/b061959b18e3a311f749b8d5e5647667.jpg"
+                                        alt="Texto alternativo">
+                                    <div class="texto-superpuesto">
+                                        <h4>Games</h4>
+                                    </div>
+                                </div>
+
+                                <!-- Agrega más elementos .populares-en-pinterest si lo necesitas -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <!-- -------------------- Final del Search-Bar ---------------------->
+
+                <ul class="navbar-nav ms-3">
+
+                    <!-------------- BELL HTML START --------------->
+                    <div class="containerBell">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-secondary dropdown-toggle circle"
+                                data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <div class="outCbox">
+                                <div class="Mcontent">
+                                    <ul class="dropdown-menu dropdown-menu-end dropdown-menu-lg-start">
+                                        <p class="tittle1">Actualizaciones</p>
+                                        <div class="lista">
+                                            <li>
+                                                <p class="comentario">Pines inspiratos en ti</p>
+                                                <img class="img2"
+                                                    src="https://i.pinimg.com/236x/ff/2d/74/ff2d74713480f334a5e3a283502204d1.jpg"
+                                                    alt="" />
+                                            </li>
+                                        </div>
+                                        <div class="lista">
+                                            <li>
+                                                <p class="comentario">Aqui tienes mas ideas.</p>
+                                                <img class="img2"
+                                                    src="https://i.pinimg.com/236x/1a/2d/7d/1a2d7d1ccb50ee300d59263708f30136.jpg"
+                                                    alt="" />
+                                            </li>
+                                        </div>
+
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------ BELL HTML END ----------------->
+
+
+                     <!------Empieza edicion de bandeja de mensajes----------->
+                <li class="nav-item dropdown-messages">
+                    <a class="nav-link ebs dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="far fa-comment-dots"></i>
+                    </a>
+                    <div class="dropdown-menu messages" id="msg">
+                        <div id="msg1">
+                            <div class="messages-bandeja">
+                                <p>Bandeja de entrada<i class="fas fa-ellipsis-h arrow-icon"></i>
+                                </p>
+                            </div>
+                            <div class="messages-nuevo">
+                              <a href="#"><img src="pencil.png" class="pencil-icon">Mensaje nuevo</a>
+                            </div>
+                            <div class="messages-ideas">
+                              <h1>Comparte ideas con amigos</h1>
+                            </div>
+                            <div class="messages-correo">
+                              <input type="text" placeholder="Buscar por nombre o correo" class="segundoinputcorreo">
+                            </div>
+                        </div>
+                        <div id="msg2">
+                            <div class="new-message">
+                                <p class="mensajeleft">Mensaje nuevo</p> <span id="cancelar" class="mensajeright">Cancelar</span>
+                            </div>
+                            <div class="messages-correo">
+                                <input type="text" placeholder="Buscar por nombre o correo" class="segundoinputcorreo">
+                            </div>
+                            <div>
+                                <img src="overflow.png" class="overflow">
+                            </div>
+                            <div class="newtext">
+                                <img src="pin.PNG" class="pin"><input type="text" placeholder="Enviar un mensaje" class="newinput"><i class="fas fa-heart corazon" style="color: #787a7d;"></i>
+                            </div>
+                        </div>
+                    </div>
+                        
+
+                <!--------Termina edicion de bandeja de mensajes...-------->
+
+
+
+
+                    <li class="nav-item" id="profile-pic">
+                        <a class="nav-link" href="#"><img src="profile.jpg" alt="profile"
+                                class="img-profile  img-searchbar" /></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link ebs dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-chevron-down"></i>
+                        </a>
+
+                        <!-------- Empieza modificación de dropdown-menu del usuario --------->
+
+                        <ul class="dropdown-menu my-new-dropdown-menu dropdown-menu-end scroll"
+                            aria-labelledby="navbarDropdown2">
+                            <li><a class="dropdown-item disabled" href="#"
+                                    style="font-size: 12px; color: black;">Actualmente en</a></li>
+                            <div class="profile-group">
+                                <li class="profile-box"><a class="dropdown-item active" href="#">
+                                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/LetterU.svg/800px-LetterU.svg.png"
+                                            alt="User icon" width="30px" height="auto" class="user-icon">
+                                        <label class="profile-label"><b>Usuario 123</b><br><label
+                                                class="opacity-item">Personal</label><b><i
+                                                    class="fa-solid fas fa-check check-icon"></i></b><br><label
+                                                class="opacity-item">usuario123@gmail.com</label></a></label></li>
+                            </div>
+                            <li><a class="dropdown-item disabled disabled-item" href="#"
+                                    style="font-size: 12px; color: black;">Tus cuentas</a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Agregar cuenta</a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Convertir en cuenta para empresa</a></li>
+                            <li><a class="dropdown-item disabled disabled-item" href="#"
+                                    style="font-size: 12px; color: black;">Más opciones</a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Mejora tu feed de inicio </a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Instalar la aplicación de Windows </a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Tus derechos de privacidad </a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Obtener ayuda<img src="arrow.webp"
+                                        class="arrow-icon"></a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Ver condiciones de servicio<img
+                                        src="arrow.webp" class="arrow-icon"></a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Ver política de privacidad<img
+                                        src="arrow.webp" class="arrow-icon"></a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Sé un evaluador beta<img src="arrow.webp"
+                                        class="arrow-icon"></a></li>
+                            <li><a class="dropdown-item menu-item" href="#">Salir </b></a></li>
+                        </ul>
+                    </li>
+                </ul>
+                <!-- ---------------Termina modificación------------ -->
+            </div>
+        </div>
+    </nav>
+
+    <!---------------------- Final del Nav Bar --------------------->
+
+    <!--------Empieza botón de ayuda estatico-------------------->
+
+    <div id="boton">
+        <button class="button-style"><img src="https://upload.wikimedia.org/wikipedia/en/5/5a/Black_question_mark.png"
+                class="question-mark"></button>
+        <div class="opciones">
+            <ul>
+                <div class="opciones-1">
+                    <a href="#">
+                        <li>Visita el centro de asistencia<img src="arrow.webp" class="arrow-icon"></li>
+                    </a>
+                    <a href="#">
+                        <li>Crear widget<img src="arrow.webp" class="arrow-icon"></li>
+                    </a>
+                </div>
+                <div class="opciones-2">
+                    <li><a href="#">Info</a><a href="#">Blog</a><a href="#">Empresas</a><a href="#">Empleos</a><a
+                            href="#">Desarrolladores</a></li>
+                    <li><a href="#">Eliminaciones</a><a href="#">Politicas de privacidad</a></li>
+                    <li><a href="#">Anuncios personalizados</a></li>
+                    <li><a href="#">Tus derechos de privacidad</a><a href="#">Condiciones</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+    <!--------------------------------Termina botón de ayuda---------------------->
+
+    <!-- -------------------- Inicio del Contenedor de Imágenes ---------------------->
+
+    <div class="contenido-img">
+
+        <div class="grid-container">
+
+            <img class="grid-item viajes-img "
+                src="https://i.pinimg.com/236x/86/a3/0b/86a30bf351e3fca3b1e0d847f4e73f52.jpg" />
+            <img class="grid-item arte-manga-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/77/36/28/773628fd35fe8af100f3fe628921f11a.jpg" />
+            <img class="grid-item wallpaper-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/a0/6c/4f/a06c4f34e6ed9e16d8b4fb9b50725bec.jpg" />
+            <img class="grid-item coches-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/57/b4/70/57b47062004b0915a1dda1a55e336014.jpg" />
+            <img class="grid-item games-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/15/30/24/153024f96045428eb47411154f1ad3ae.jpg" />
+            <img class="grid-item games-img "
+                src="https://i.pinimg.com/236x/30/4e/ba/304ebaa7114b0e34536e8510f760d22a.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/50/65/54/50655437ff81ed9c54b5515a67d730f6.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/5d/ac/97/5dac97a99563e4353bfdbc433b9b2c67.jpg" />
+            <img class="grid-item games-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/da/d3/c6/dad3c6adf669af670b2c8b265a5b561b.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/0e/31/b8/0e31b83f2ecd05d2f8244d27807ce4f6.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/65/3b/e4/653be4b4051fe54cadaaeb8dffb26358.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/30/6e/ff/306eff8eb8f961ef2b8859381684b35f.jpg" />
+            <img class="grid-item wallpaper-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/64/f1/30/64f13080215bb5d7dafdbd73b65ee4ce.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/3c/ee/ca/3ceecaaa4e7d8bc4695fd71966c6f10d.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/3d/ef/50/3def50e2d592c28bbf0b07ba31803094.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/f4/f4/e8/f4f4e8b53ea032b25f9ed4d453ee30b0.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/38/57/fe/3857fe254af40a5b91a5cbaba22c7cb2.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/fd/8b/63/fd8b63c304660eddc2faac433b210e05.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/8b/62/1f/8b621fdfe6d8519d76fb10fb430ea871.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/c0/ec/75/c0ec75181452b593fb2954a4e92cc171.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/23/d9/00/23d9003f26d7e74c562b03cfbb622eea.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/06/91/bc/0691bc04c23524f947816c048ac24259.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/38/e5/c7/38e5c784036d0d789c37a50e3e634432.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/0e/2f/2b/0e2f2be72d84064283c15bd2a4a06e94.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/dc/02/c5/dc02c5074cba21fd7cae267638a736f9.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/ae/0f/d4/ae0fd46aff5ffa110561c53e228ebf5c.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/19/4b/90/194b901965ef9d0cedf5f6f79dd02056.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/b9/20/f2/b920f2f6980ea5db7ca8e03aee116a10.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/38/26/21/382621b31fcafd6d7df05a2b34c7ed23.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/e4/ea/14/e4ea14d84f1a4e8a329f6f0709e9ec12.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/85/24/32/85243227e921a46ab1e385e1ae10cd1c.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/7f/06/66/7f0666346a18b477981e46ed74365a6e.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/17/1a/cd/171acddc24cd2db330c4abdee135271b.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/df/88/7a/df887ac99bdb0514047fa947a423902d.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/36/e0/e7/36e0e78e9c51bf5e0d076904534a6e05.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/95/4d/97/954d97097205bcc1bb872889819928eb.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/03/7f/18/037f182d5fe47643f2750dbad9c112d6.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/08/c0/d5/08c0d55fe06064dc33441e44a82b8c50.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/2a/48/df/2a48df3716b5c29cd7359fe90daf87b4.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/e3/d4/21/e3d421c7ea51a052119592a6dc7c69ee.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/39/8b/2c/398b2c25daf003ae1427a399778b0049.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/5d/00/dd/5d00dd8384b42e6edc9f50312c27cb04.jpg" />
+            <img class="grid-item viajes-img"
+                src="https://i.pinimg.com/236x/dc/97/4e/dc974e453e02886762d75825dca5c7f3.jpg" />
+            <img class="grid-item arte-manga-img"
+                src="https://i.pinimg.com/236x/08/3b/83/083b83626a8169b294cc72c1aee1c866.jpg" />
+            <img class="grid-item wallpaper-img"
+                src="https://i.pinimg.com/236x/71/11/0e/71110e801085efbf0e6b8d44653110cf.jpg" />
+            <img class="grid-item coches-img"
+                src="https://i.pinimg.com/236x/aa/13/f5/aa13f570471581f50e5f966b995dc8d8.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/4a/fe/31/4afe31b113d6dcfdcd1ebe2783b57421.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/d1/b1/1d/d1b11d5e4dbae547ac0d651476cec488.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/6e/53/3d/6e533da6cdacc748f2f7280ec0017cb4.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/52/2e/12/522e12c7ed58044b7f50e7178e8b0e09.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/fa/01/9e/fa019e4c64a3603f9886705c11f19a14.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/92/b0/88/92b088e38eeb76dec3fe51b7ccecfc1a.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/a8/b4/cd/a8b4cd529a79489f5c6699980736f40f.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/4f/bd/e9/4fbde96fcc39010c443b66103a208313.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/63/26/17/632617ebf5d728474250dc97d047f083.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/49/de/b5/49deb5fb788f5c95e58926cda7226efb.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/04/48/cc/0448cc1b39145982fe89fbdca18f52dd.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/92/5d/85/925d855998c7146fb5435533c9542687.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/de/4f/d3/de4fd315a7132ad6bb4d2f9e3862a4e6.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/bf/fe/20/bffe20215af8838b9689e184a5b2ba03.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/f8/e6/b4/f8e6b4139f7074e18642e19649711bc2.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/8a/b3/24/8ab324882eb603dc3938d06fe6af8284.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/d2/d6/95/d2d6959844e35107aa9cfe33cbf8bf04.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/64/e0/40/64e0406e595af5009cb93a6d48cacb9a.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/ec/77/1c/ec771c21af18ef35e660d1b954c8af41.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/d7/66/48/d76648fbfa1deffe25d742d4a027a087.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/e7/92/19/e79219859328aa0449b730846b2d1899.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/0b/20/3d/0b203da807a5ee2b7b774609b3da3293.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/93/ee/f2/93eef21652a112ec3afd3316a9b72527.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/2d/7a/cd/2d7acdca3698bb3cad9b8021c5068cbd.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/62/f1/51/62f15177d86a67784a9d5c57de97c0b3.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/f2/fb/26/f2fb269a2daf850124669ac5a6a04cb3.jpg" />
+            <img class="grid-item foto-perfil-img"
+                src="https://i.pinimg.com/236x/5c/51/58/5c51580082dea68676c7f95ed9898159.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/ee/ac/fe/eeacfeed369e6eed8198b3c8b86251ac.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/a4/10/df/a410df6fbc2684e2d1d1f24620267496.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/c8/d9/06/c8d906721d1836edefc26ab4d8a8f6c3.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/b8/9a/9a/b89a9a7efa219a50071feb84a6821815.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/c9/f6/ec/c9f6ecee965bb38ee910fb7eab7d5dd1.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/b1/b5/04/b1b5044df7628ec031f6dea43b769a64.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/51/c0/6a/51c06a708f1e67d74d2832375623df3a.jpg" />
+            <img class="grid-item dibujos-img"
+                src="https://i.pinimg.com/236x/11/b7/8a/11b78ad926330b58b5fd2255535691f4.jpg" />
+            <img class="grid-item foto-compartir-img"
+                src="https://i.pinimg.com/236x/b3/e4/84/b3e484d2a8b85494bce8b19c4e503693.jpg" />
+            <img class="grid-item foto-compartir-img"
+                src="https://i.pinimg.com/236x/f3/da/d2/f3dad2495ebe8712d987ca70148c0f7a.jpg" />
+            <img class="grid-item foto-compartir-img"
+                src="https://i.pinimg.com/236x/53/6d/9c/536d9c87f04285d0c0934434051ef637.jpg" />
+            <img class="grid-item foto-compartir-img"
+                src="https://i.pinimg.com/236x/da/66/17/da6617e97436eaa9d75e55f72aa5794b.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/f9/d2/41/f9d2417dff278760a3d7502cfa7b4b6a.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/11/d3/72/11d372024ba5cee884f79d3169508a24.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/8b/bc/e2/8bbce2a4d68c5f5eecbacb773e923b96.jpg" />
+            <img class="grid-item games-img"
+                src="https://i.pinimg.com/236x/60/2e/dc/602edcc9136ac24d84c5632c3ed5a704.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/f8/0e/d1/f80ed16bf1a223aec357c5584b3f4617.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/31/95/33/319533fe46d3cdd214af27c85c717b8d.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/f7/b4/5d/f7b45dae581399b6420a1e30b3b78f44.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/f9/4d/c1/f94dc1944e828c2378b01c753492bbb2.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/b0/91/e9/b091e90d066ebd36e783d3e8cc30f8d2.jpg" />
+            <img class="grid-item ilustraciones-img"
+                src="https://i.pinimg.com/236x/cd/ff/a1/cdffa1e5632f3bc96c948d43c5508e53.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/77/47/7a/77477a61e793deba9717e0d8e2502df4.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/6e/8d/1f/6e8d1f9b0ed7428e7989fc266f27bf10.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/b3/c0/3f/b3c03f651618c6c24c1ffb2878060a04.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/cf/a6/60/cfa660018d87eaa832f9242e6099c9a5.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/ac/11/a9/ac11a9b5aefdc73a1572496bd6519c8e.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/0d/0f/3b/0d0f3b99ab0a8a8ada15c518bc4255ac.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/ee/19/05/ee1905c39d0f60ce1bd28c8afaed0af5.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/ed/07/c3/ed07c3c4b45266a60df7fac71a4d0315.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/16/22/31/162231131a07dda331e720811b87f9d8.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/c3/56/c3/c356c3a8dec0325bf67d9cd3775aad59.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/0a/a4/8f/0aa48ff696fb755e1caee4c47d338af3.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/3e/1c/95/3e1c95ba442d60a1fe6968fff6e6e9b9.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/57/c7/9c/57c79c360e0bb1d749f498d08dab1a54.jpg" />
+            <img class="grid-item wall-celular-img"
+                src="https://i.pinimg.com/236x/a8/f2/22/a8f2224e3945b9c7f7d7f9142f33f0c5.jpg" />
+            <img class="grid-item wall-celular-img wall-aesthetic-img"
+                src="https://i.pinimg.com/236x/1a/cd/32/1acd326b410f19be2340fd7cc521811c.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/9b/12/57/9b1257779eb269ec08daeb1644cab13a.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/fd/30/b2/fd30b261d5e8ba594a18176927e2e6a3.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/88/da/92/88da92b2fa00119b67c96f45e021f543.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/58/19/45/581945b48922594360b78a9475f7dc28.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/75/38/35/75383530ad058d79442578a5a49dd5c2.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/41/13/9b/41139b62526287c476de4dd8e9e64eae.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/ae/82/90/ae829057d5e328924511d00b16b08ff9.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/90/48/e3/9048e397d32e0673088e06440e6a4f8d.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/a0/17/e8/a017e86951e6f4a72872556328043561.jpg" />
+            <img class="grid-item espa-art-img"
+                src="https://i.pinimg.com/236x/d2/d9/bc/d2d9bc746df1412052cb1d738681daf7.jpg" />
+
+
+        </div>
+    </div>
+
+
+
+    <!---------------------- Final del Contenedor de Imágenes ---------------------->
+
+</body>
+<!-- -------------------- Scripts ---------------------->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+    crossorigin="anonymous"></script>
+<script src="script.js"></script>
+<script src="./Card/card.script.js"></script>
+<script src="./SearchBar/searchBar.script.js"></script>
+<script src="https://kit.fontawesome.com/0f7704d938.js" crossorigin="anonymous"></script>
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+
+</html>
