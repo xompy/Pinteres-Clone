@@ -1,0 +1,533 @@
+@import url('https://fonts.googleapis.com/css2?family=Blinker:wght@300;400;600;700&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/*CSS del Nav-bar */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 75px;
+  background-color: white;
+  z-index: 9999;
+}
+
+.nav-link.ebs {
+  font-weight: bold;
+  color: black;
+  margin-top: 10px;
+}
+
+
+.navbar-nav .nav-item.active a.nav-link {
+  background-color: black;
+  color: white;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+/*CSS del dropdown-menu #1*/
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown-toggle i {
+  margin-left: 5px;
+}
+
+.dropdown-menu {
+  min-width: 200px;
+  /* Ajusta el ancho según tus necesidades */
+}
+
+/* Empieza modificacion de dropdown-menu #2 */
+
+.dropdown-menu a.active,
+.dropdown-menu a:hover {
+  background-color: rgba(128, 128, 128, 0.212);
+  color: black;
+  width: auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.user-icon {
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 10px;
+  width: 20px;
+  height: auto;
+}
+
+.profile-group {
+  display: flex;
+  justify-content: space-around;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 2px;
+}
+
+.profile-label {
+  margin-top: 1px;
+  padding-left: 25px;
+  padding-right: 20px;
+  margin-bottom: 1px;
+  font-size: 14px;
+}
+
+.dropdown-item {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding-bottom: 8px;
+}
+
+.menu-item {
+  font-weight: 550;
+  font-size: 16px;
+}
+
+.disabled-item {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.check-icon {
+  font-size: 20px;
+  padding-left: 120px;
+  float: right;
+  font-weight: 600;
+  position: relative;
+  top: -20px;
+}
+
+.opacity-item {
+  opacity: 0.7;
+}
+
+.arrow-icon {
+  width: 20px;
+  height: auto;
+  float: right;
+  margin-top: 5px;
+}
+
+.scroll {
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: calc(100vh - 3.5rem)
+}
+
+/*  CSS de los iconos font-awesome */
+
+.fa-bell {
+  font-size: 24px;
+  padding-top: 5px;
+}
+
+#bell {
+  margin-left: -25px;
+}
+
+.fa-comment-dots {
+  font-size: 24px;
+  font-weight: 900;
+  margin-top: 1px;
+  color: #5f5f5f;
+}
+
+.fa-times {
+  font-weight: bold;
+  border-radius: 35%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.fa-times:hover {
+  background-color: rgba(128, 128, 128, 0.212);
+  color: black;
+}
+
+/*Css Imagen de Perfil */
+
+.img-profile {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-top: 8px;
+}
+
+/*Empieza botón de ayuda estatico*/
+
+#boton {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+  margin: 0;
+  z-index: 9998;
+}
+
+.button-style {
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  font-size: 20px;
+  font-weight: 900;
+  width: 60px;
+  height: 60px;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button-style:hover:before {
+  content: "Más";
+  color: rgb(255, 255, 255);
+  border: none;
+  background-color: #111111;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  padding: 4px 8px;
+  position: absolute;
+  top: 30%;
+  left: -30px;
+  border-radius: 10%;
+  transform: translateX(-50%);
+}
+
+.question-mark {
+  width: 30px;
+  height: auto;
+}
+
+.opciones {
+  display: none;
+  position: absolute;
+  width: auto;
+  padding: 0.5rem;
+  height: auto;
+  bottom: 0.3rem;
+  right: 4rem;
+  border-radius: 20px;
+  background-color: #ffffff;
+  padding-top: 0.5px;
+}
+
+.opciones ul {
+  display: inline-block;
+  width: 22rem;
+  list-style: none;
+  padding-left: 2px;
+}
+
+.opciones a {
+  text-decoration: none;
+  padding: 5px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-weight: 600;
+}
+
+.opciones-1 {
+  border-bottom: solid 1px;
+  border-color: #afadad;
+  height: 95px;
+  padding-top: 10px;
+
+}
+
+.opciones-1 a {
+  color: #111111;
+  padding-top: 2px;
+  display: block;
+}
+
+.opciones-1 li {
+  height: 35px;
+  padding-top: 5px;
+}
+
+.opciones-2 a {
+  color: #5f5f5f;
+  font-size: 14px;
+}
+
+.opciones-1 li:hover {
+  background-color: rgba(128, 128, 128, 0.212);
+  color: black;
+  width: auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.opciones-2 a:hover {
+  text-decoration: underline;
+}
+
+.opciones-1box {
+  height: 50px;
+}
+
+/*Termina botón de ayuda*/
+
+
+
+/**** BELL AREA START ********/
+
+.fa-bell {
+  font-size: 24px;
+  margin-top: 8px;
+  color: rgb(100, 99, 99);
+}
+
+#bell {
+  margin-left: -25px;
+}
+
+.btn-check:checked+.btn,
+.btn.active,
+.btn.show,
+.btn:first-child:active,
+:not(.btn-check)+.btn:active {
+  color: white var(--bs-btn-active-color);
+  background-color: #ffffff;
+  border-color: white var(--bs-btn-active-border-color);
+}
+
+.circle {
+  border-radius: 50%;
+  border: none;
+  background: none;
+
+}
+
+.circle:hover {
+  background-color: rgba(188, 186, 186, 0.516);
+}
+
+.tittle1 {
+  margin-top: 10px;
+  margin-left: 100px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+.comentario {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.img2 {
+  width: 350px;
+  height: 180px;
+  margin-left: 10px;
+  border-radius: 15px;
+}
+
+.lista {
+  width: 450px;
+  height: 160px;
+  border-radius: 15px;
+  background-color: #ffffff;
+}
+
+.lista:hover {
+  background-color: rgba(163, 163, 166, 0.239);
+}
+
+.lista {
+  cursor: pointer;
+}
+
+.dropdown-menu-lg-start[data-bs-popper] {
+  margin-top: 15px;
+  border: none;
+  left: -250%;
+
+}
+
+@media (min-width: 500px) {
+  .img2 {
+    width: 300px;
+    height: 120px;
+    border-radius: 15px;
+
+  }
+
+  .dropdown-menu-lg-start[data-bs-popper] {
+    left: -230%;
+  }
+}
+
+/**** BELL AREA END ********/
+
+
+/*Empieza boton de bandeja de mensajes*/
+.pencil-icon{
+  width: 60px;
+  height: auto;
+  padding-right: 10px;
+  
+}
+.dropdown-messages{
+  position: relative;
+  display: inline-block;
+}
+.messages{
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0%;
+  transform: translateX(-70%);
+  z-index: 30;
+  min-width: 160px;
+  width: 360px;
+  height: 570px;
+  margin-right: 20px;
+  padding: 0.5rem 0;
+  margin: 0.125rem 0 0;
+  background-color: #ffffff;
+  background-clip: padding-box;
+  border: solid 2px rgb(243, 243, 243);
+  border-radius: 20px;
+  box-shadow: #5c5a5a;
+}
+.messages li{
+  list-style: none;
+  font-size: 1rem;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+}
+.messages li a{
+  text-decoration: none;
+  color: #111111;
+}
+.messages-bandeja{
+  width: 100%;
+  height: auto;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 600;
+}
+.messages ul{
+  padding-left: 10px;
+}
+.messages-nuevo{
+  font-weight: 600;
+  padding-bottom: 5px;
+  padding-top: 5px;
+}
+.messages-nuevo a{
+  text-decoration: none;
+  color: #111111;
+}
+.messages-nuevo:hover{
+  background-color: rgba(128, 128, 128, 0.212);
+  color: black;
+  width: auto;
+  border-radius: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+.messages-ideas{
+  padding-left: 5px;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+.messages-correo input{
+  width: 320px;
+  float: center;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border: solid 2px #c4c1c1;
+  border-radius: 999px;
+  background-image: url('https://www.freeiconspng.com/thumbs/search-icon-png/search-icon-png-2.png');
+  background-repeat: no-repeat;
+  background-size: 16px 16px;
+  background-position: left 12px center;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding-left: 40px;
+
+}
+.fa-ellipsis-h{
+  margin-right: 20px;
+  font-size: 20px;
+  padding-top: 0%;
+}
+/*estilos de menu secundario en JS*/
+.mensajeleft{
+  text-align: left;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 20px;
+  display: inline-block;
+}
+.mensajeright{
+  float: right;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-weight: 600;
+  margin-right: 10px;
+  padding: 7px;
+}
+.overflow{
+  float: right;
+  padding-right: 5px;
+  padding-top: 10px;
+}
+.newtext{
+  padding-top: 340px;
+}
+.newinput{
+  width: 230px;
+  float: center;
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border: solid 2px #c4c1c1;
+  border-radius: 999px;
+  margin-bottom: 60px;
+  padding-right: 20px;
+  text-align: left;
+  outline: none;
+  padding-left: 20px;
+}
+.corazon{
+  float: right;
+  padding-right: 20px;
+  font-size: 20px;
+  padding-top: 10px;
+}
+.newinput:focus{
+  border: solid 3px rgb(90, 175, 255) !important;
+}
+.segundoinputcorreo{
+  outline: none;
+}
+.segundoinputcorreo:focus{
+  border: solid 3px rgb(90, 175, 255) !important;
+  background-image: none;
+  padding-left: 20px;
+  transition: 0.2s;
+}
+
+#msg1{
+  width: 100%;
+  height: 100%;
+  padding:1rem;
+}
+#msg2{
+  display:none;
+  width: 100%;
+  height: 100%;
+  padding:1rem;
+}
+
+#cancelar:hover{
+  background-color: #999898;
+  border-radius: 20px;
+  padding: 0.5rem;
+  cursor:pointer;
+}
