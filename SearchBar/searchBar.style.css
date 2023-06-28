@@ -1,0 +1,247 @@
+/* CSS del Search-bar */
+
+.search-form {
+    margin: 0 1rem;
+    flex-grow: 1;
+    width: auto;
+    position: relative;
+    height: 48px;
+    margin-top: 8px;
+}
+
+.search-section {
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    border-radius: 20px 20px 20px 20px;
+    border: 1px solid #fff;
+    z-index: 3;
+    visibility:hidden;
+}
+
+
+.search-form:focus-within .search-section {
+    display: block;
+    /* mostrar al hacer foco en la barra de búsqueda */
+}
+
+.search-form input[type="search"] {
+    padding-left: 40px;
+    height: 48px;
+    border-radius: 24px;
+    background-color: rgba(128, 128, 128, 0.212);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.search-form input[type="search"]:focus {
+    outline: none;
+    background-color: rgba(128, 128, 128, 0.212);
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+    padding-left: 10px;
+}
+
+.search-icon {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+}
+
+.search-icon i {
+    color: #333;
+}
+
+.search-form input[type="search"]:focus+.search-icon {
+    opacity: 0;
+    transform: translateY(-50%) translateX(5px);
+}
+
+.close-icon i.fa-times {
+    font-size: 1em;
+    color: #fff;
+    background-color: #333;
+    border-radius: 50%;
+    padding: 5px;
+    display: inline-block;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+
+}
+
+
+  
+.close-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
+  
+  .search-form input[type="search"]:focus+.search-icon {
+    opacity: 0;
+    transform: translateY(-50%) translateX(5px);
+  }
+  
+  .search-form input[type="search"]:focus+.search-icon+.close-icon {
+    opacity: 1;
+    transform: translateY(-50%);
+  }
+/* ------------------------------------------------------------------------------------------------- */
+
+/* Secciones del Searchbar */
+
+/*  CSS de "Busquedas recientes" */
+
+.busquedas-recientes {
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-top: 20px;
+}
+
+.busquedas-recientes h6 {
+    margin-bottom: 10px;
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+    /* Puedes ajustar el tamaño del texto según sea necesario */
+}
+
+
+.tag-container {
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.tag {
+    display: inline-flex;
+    align-items: center;
+    background-color: #e9e9e9;
+    color: #333;
+    border-radius: 20px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+.tag:hover {
+    background-color: #dadada;
+    color: #333;
+}
+
+.tag span {
+    border-radius: 20px;
+}
+
+.tag i {
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+/* CSS de "Ideas para ti" */
+
+.ideas-para-ti {
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 15px;
+}
+
+.ideas-para-ti h6 {
+    
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* CSS de las Imágenes de "Ideas para ti" y "Populares en Pinteres" */
+
+.contenedor-imagen {
+    position: relative;
+    display: inline-block;
+    width: 190px;
+    /* ancho predeterminado */
+    max-height: 100px;
+    /* altura máxima */
+    overflow: hidden;
+    /* para recortar las imágenes si son más grandes que el contenedor */
+    border-radius: 20px 20px 20px 20px;
+    /* redondear las esquinas superiores e inferiores */
+   margin-right: 10px;
+    /* espacio entre las imágenes */
+    margin-top: 5px;
+}
+
+.contenedor-imagen:last-child {
+    margin-right: 0;
+    /* evitar margen derecho en el último elemento */
+}
+
+.contenedor-imagen img {
+    width: 100%;
+    /* para que la imagen se ajuste al ancho del contenedor */
+    height: auto;
+    /* para mantener la proporción original de la imagen */
+    border-radius: 20px 20px 20px 20px;
+    /* redondear las esquinas superiores e inferiores */
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: #ffffff;
+}
+
+.texto-superpuesto h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.texto-superpuesto p {
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.contenedor-imagen:hover img {
+    filter: brightness(0.7);
+}
+
+/* CSS de "Populares en Pinterest" */
+
+.populares-en-pinterest {
+    border-radius: 20px;
+    padding: 10px;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+
+.populares-en-pinterest h6 {
+    font-weight: normal;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* ------------------------------------------------------------------------------------------------- */
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
